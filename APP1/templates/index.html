@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block body %}
+  <main class="main">
+
+    <!-- Hero Section -->
+
+      <section class="text-and-img
+								animated				section
+				section--green-light
+				section--pad-top-normal section--pad-bottom-normal text-and-img__img-alignment-right" style="background-color: maroon">
+          <div class="container" >
+              <div class="row align-items-center">
+                  <div class="col-12 col-md-6 col-lg-7 order-md-2 align-self-center">
+								<div class="text-and-img__img text-and-img__media">
+                                    <img src="https://www.sorghumcheckoff.com/wp-content/uploads/2021/09/sorghum-01.png" alt="" height="344" width="600" srcset="https://www.sorghumcheckoff.com/wp-content/uploads/2021/09/sorghum-01.png 1000w, https://www.sorghumcheckoff.com/wp-content/uploads/2021/09/sorghum-01-300x172.png 300w, https://www.sorghumcheckoff.com/wp-content/uploads/2021/09/sorghum-01-768x440.png 768w" loading="lazy" />				</div>
+											</div>
+                  <div class="col-12 col-md-6 col-lg-5 order-md-1">
+                      <div class="text-and-img__content">
+										<h2 class="text-and-img__heading h1 color-burgundy mb-8" style="color: white"><span>Sorghum</span></h2>
+										<div class="text-and-img__copy">
+                                            <p style="color: white; line-height: 48px">Super grain. Nutritional powerhouse. Versatile crop. Sorghum is an ancient grain that&#8217;s high in protein, rich in antioxidants and naturally gluten-free. It can be grown as a grain, forage or sweet crop, and is one of the top five cereal crops in the world.</p>
+                                        </div>
+										<div class="text-and-img__link">
+
+					</div>
+									</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <img src="https://www.sorghumcheckoff.com/wp-content/uploads/2021/10/farmers-economics-1800x900.jpg" alt="Image " class="img-fluid img-overlap" data-aos="zoom-out">
+            </div>
+            <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="content-subtitle text-white opacity-50">Why Choose Us</h3>
+              <h2 class="content-title mb-4">
+                More than <strong>2 year experience</strong> in agriculture
+                industry
+              </h2>
+              <p class="opacity-50"> We have come to a conclusion that
+Sorghum is a smart choice for lowering your cost of production, especially in the way of seed costs
+              </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+    </section><!-- /About Section -->
+
+    <section id="recent-posts" class="recent-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Recent Posts</h2>
+        <p></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+         {% for post in posts %}
+          <div class=" card col-xl-4 col-md-6 " >
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
+                <span class="post-date">{{ post.date }}</span> <br><br>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title card-body" style="line-height: 24px; font-size: medium;">{{ post.description }}</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">{{ post.name }}</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">{{ post.type }}</span>
+                  </div>
+                </div>
+
+                <hr>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+       {% endfor %}
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Recent Posts Section -->
+
+
+
+  </main>
+
+{% endblock %}
